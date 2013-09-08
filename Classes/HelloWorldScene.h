@@ -2,7 +2,11 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "SimpleAudioEngine.h" 
+
 USING_NS_CC;
+
+
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -16,6 +20,7 @@ public:
     
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
+    void animationEndCallback(CCObject* pSender);
     
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
@@ -30,9 +35,13 @@ public:
     CCRect bgSpriteRect;
     CCSprite* bgSprite;
     CCSpriteFrame* spFrame;
+    CCSpriteBatchNode* spBatch;
     CCArray* bgSprites;
     
+    
+    
     bool initDone;
+    bool playerBG;
     
 };
 
